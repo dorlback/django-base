@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-=!ruqmb@a%09h*600f)nx(!530=z@qgrvb6h3+(7rq5vt(3!kq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','http://localhost:8000/']
 
 # Application definition
 
@@ -45,7 +45,7 @@ THIRD_PARTY_APPS = [
 
 PROJECT_APPS = [
     'config',
-    'book_app',
+    "book_app.apps.BookAppConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS

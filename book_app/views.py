@@ -1,11 +1,15 @@
 from django.shortcuts import render
-from django.views.generic.list import ListView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from book_app.models import Author, Book
+from book_app.serializer import BookSerializer
+from rest_framework.permissions import AllowAny
+    
+class BookListCreateView(ListCreateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    permission_classes = [AllowAny]
 
-class BookListView(ListView):
-    model = Book
-    paginate_by = 100
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+class BookRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    permission_classes = [AllowAny]
