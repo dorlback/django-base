@@ -6,7 +6,8 @@ from drf_writable_nested.serializers import WritableNestedModelSerializer
 class AuthorSrializer(serializers.ModelSerializer):
     class Meta:
         model = Author
-        fields = ['name']
+        fields = ['pk', 'name']
+        read_only_fields = ['pk']
 
 # 책 시리얼라이저
 class BookSerializer(WritableNestedModelSerializer, serializers.ModelSerializer):
