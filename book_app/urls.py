@@ -3,10 +3,10 @@ from book_app.views import BookListCreateView, BookRetrieveUpdateDestroyView, Au
 
 urlpatterns = [
     # 작가
-    path("author", AuthorListCreateView.as_view(), name="author-list-create"),
-    path("author/<int:pk>", AuthorRetrieveUpdateDestroyView.as_view(), name='author-detail-update-destroy'),
+    path("authors", AuthorListCreateView.as_view(), name="author-list-create"),
+    path("authors/<int:pk>", AuthorRetrieveUpdateDestroyView.as_view(), name='author-detail-update-destroy'),
     # 책
-    path("book", BookListCreateView.as_view(), name="book-list-create"),
-    path("book/<int:pk>", BookRetrieveUpdateDestroyView.as_view(), name='book-detail-update-destroy'),
+    path("books", BookListCreateView.as_view(), name="book-list-create"),
+    path("books/<int:pk>", BookRetrieveUpdateDestroyView.as_view(), name='book-detail-update-destroy'),
 ]
 
